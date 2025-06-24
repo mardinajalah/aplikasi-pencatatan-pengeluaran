@@ -1,0 +1,12 @@
+GET http://localhost:5000/api/
+
+
+###
+POST http://localhost:5000/api/
+Content-Type: application/json
+
+{
+    "nama": "air gelas",
+    "harga": 1000,
+    "jumlah": "2 gelas"
+}
