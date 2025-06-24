@@ -2,10 +2,10 @@ POST http://localhost:5000/auth/signup
 Content-Type: application/json
 
 {
-    "nama": "sandi",
+    "nama": "mardin",
     "email": "mardin@gmail.com",
-    "password": "sandi123",
-    "confermPassword": "sandi123"
+    "password": "mardin123",
+    "confermPassword": "mardin123"
 }
 
 

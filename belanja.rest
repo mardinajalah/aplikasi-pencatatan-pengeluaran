@@ -10,3 +10,16 @@ Content-Type: application/json
     "harga": 1000,
     "jumlah": "2 gelas"
 }
+
+###
+PATCH http://localhost:5000/api/2
+Content-Type: application/json
+
+{
+    "nama": "air botol besar",
+    "harga": 3000,
+    "jumlah": "1 botol"
+}
+
+###
+DELETE http://localhost:5000/api/4

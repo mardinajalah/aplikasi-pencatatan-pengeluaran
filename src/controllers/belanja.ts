@@ -8,7 +8,7 @@ const getAllBelanja = async (req: Request, res: Response) => {
             message: "data berhasil di tampilan",
             data: result
         })
-    } catch {
+    } catch (err) {
         res.status(500).json({
             message: "server error"
         })
@@ -31,5 +31,41 @@ const createBelanja = async (req: Request, res: Response) => {
     }
 }
 
+const updateBelanja = async (req: Request, res: Response) => {
+    const { id } = req.params
+    const { nama, harga, jumlah } = req.body
 
-export default { getAllBelanja, createBelanja }
+    try {
+        const idBelanja = Number(id)
+        const newData = { nama, harga, jumlah }
+        const result = await BelanjaModel.updateDataBelanja(idBelanja, newData)
+        res.status(200).json({
+            message: "data berhasil di ubah",
+            data: result
+        })
+    } catch {
+        res.status(400).json({
+            message: "data gagal di ubah",
+        })
+    }
+}
+
+const deleteBelanja = async (req: Request, res: Response) => {
+    const { id } = req.params
+
+    try {
+        const idBelanja = Number(id)
+        const result = await BelanjaModel.deleteDataBelanja(idBelanja)
+        res.status(200).json({
+            message: "data berhasil di hapus",
+            data: result
+        })
+    } catch {
+        res.status(400).json({
+            message: "data gagal di hapus"
+        })
+    }
+}
+
+
+export default { getAllBelanja, createBelanja, updateBelanja, deleteBelanja }

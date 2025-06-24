@@ -15,10 +15,28 @@ model User {
 }
 
 model Belanja {
-  id   Int    @id @default(autoincrement())
-  nama String
-  harga Int
-  jumlah String
+  id        Int      @id @default(autoincrement())
+  nama      String
+  harga     Int
+  jumlah    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model UangMasuk {
+  id        Int      @id @default(autoincrement())
+  jumlah    Int
+  createdAt DateTime @default(now())
+}
+
+model UangKeluarHariIni {
+  id      Int      @id @default(autoincrement())
+  jumlah  Int
+  tanggal DateTime @unique @default(now())
+}
+
+model UangKeluar {
+  id        Int      @id @default(autoincrement())
+  jumlah    Int
+  tanggal   DateTime @default(now())
 }
